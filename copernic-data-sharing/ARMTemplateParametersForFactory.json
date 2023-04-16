@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "copernic-data-sharing"
+		},
+		"azure_copernic_dataset_connectionString": {
+			"value": ""
+		},
+		"copernic_on_premise_data_upload_connectionString": {
+			"value": ""
+		},
+		"upload on-premise copernic data to azure_properties_copernic_on_premise_to_azure_data_copy_parameters_windowStart": {
+			"value": "@{addminutes(trigger().scheduledTime, -5)}"
+		},
+		"upload on-premise copernic data to azure_properties_copernic_on_premise_to_azure_data_copy_parameters_windowEnd": {
+			"value": "@trigger().scheduledTime"
+		}
+	}
+}
