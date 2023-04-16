@@ -1,0 +1,7 @@
+{
+	"name": "bercomac-on-premise-copernic-data-sharing",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "on premise service to upload copernic data to the cloud"
+	}
+}
