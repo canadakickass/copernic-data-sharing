@@ -1,0 +1,124 @@
+{
+	"name": "azure_coprnic_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azure_copernic_dataset",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "pickinglist_id",
+				"type": "char",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "item_id",
+				"type": "char",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "pnum",
+				"type": "char",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "status",
+				"type": "char",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "cmd_qty",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "is_transit",
+				"type": "tinyint",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "is_delivered",
+				"type": "tinyint",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "location_from",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "location_to",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "delivery_date",
+				"type": "timestamp",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "created_at",
+				"type": "timestamp",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "additional_info",
+				"type": "json",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "lot",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "tree_node_id",
+				"type": "varchar",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "transfered_qty",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "in_production_qty",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "master_number",
+				"type": "char",
+				"precision": 0,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"tableName": "transfers"
+		}
+	}
+}
