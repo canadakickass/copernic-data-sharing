@@ -16,7 +16,8 @@
 				},
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource"
+						"type": "MySqlSource",
+						"query": "SELECT * FROM my_source_table\nWHERE created_at >= '@{pipeline().parameters.windowStart}' AND created_at < '@{pipeline().parameters.windowEnd}'"
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
