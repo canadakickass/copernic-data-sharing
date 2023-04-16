@@ -1,0 +1,34 @@
+{
+	"name": "Trigger_z1q",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copernic_on_premise_to_azure_data_copy",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"windowStart": {
+						"type": "Expression",
+						"value": "@{addminutes(trigger().scheduledTime, -5)}"
+					},
+					"windowEnd": {
+						"type": "Expression",
+						"value": "@trigger().scheduledTime"
+					}
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 5,
+				"startTime": "2023-04-16T21:15:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
