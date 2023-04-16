@@ -1,5 +1,5 @@
 {
-	"name": "DestinationDataset_z1q",
+	"name": "azure_copernic_transfers",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "azure_copernic_dataset",
