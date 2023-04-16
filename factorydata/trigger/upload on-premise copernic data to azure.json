@@ -1,8 +1,8 @@
 {
-	"name": "Trigger_z1q",
+	"name": "upload on-premise copernic data to azure",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {
