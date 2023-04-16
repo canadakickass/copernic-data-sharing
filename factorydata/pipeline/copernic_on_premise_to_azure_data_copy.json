@@ -2,58 +2,6 @@
 	"name": "copernic_on_premise_to_azure_data_copy",
 	"properties": {
 		"description": "Task that copies on-premise copernic dataset to azure copernic dataset",
-		"activities": [
-			{
-				"name": "Copy_z1q",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [
-					{
-						"name": "Source",
-						"value": "`transfers`"
-					},
-					{
-						"name": "Destination",
-						"value": "transfers"
-					}
-				],
-				"typeProperties": {
-					"source": {
-						"type": "MySqlSource",
-						"query": {
-							"value": "select * from `transfers` \nwhere `created_at` >= '@{formatDateTime(pipeline().parameters.windowStart, 'yyyy-MM-dd HH:mm' )}' \nAND `created_at` < '@{formatDateTime(pipeline().parameters.windowEnd, 'yyyy-MM-dd HH:mm' )}'",
-							"type": "Expression"
-						}
-					},
-					"sink": {
-						"type": "AzureMySqlSink",
-						"writeBatchSize": 10000,
-						"writeBatchTimeout": "00:00:30"
-					},
-					"enableStaging": false,
-					"validateDataConsistency": false
-				},
-				"inputs": [
-					{
-						"referenceName": "SourceDataset_z1q",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "DestinationDataset_z1q",
-						"type": "DatasetReference"
-					}
-				]
-			}
-		],
 		"parameters": {
 			"windowStart": {
 				"type": "String"
