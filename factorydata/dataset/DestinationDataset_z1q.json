@@ -1,0 +1,15 @@
+{
+	"name": "DestinationDataset_z1q",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azure_copernic_dataset",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "transfers"
+		}
+	}
+}
