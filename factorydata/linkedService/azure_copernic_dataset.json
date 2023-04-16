@@ -1,0 +1,17 @@
+{
+	"name": "azure_copernic_dataset",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "cloud database for copernic",
+		"annotations": [],
+		"type": "AzureMySql",
+		"typeProperties": {
+			"connectionString": "server=bercomac-copernic-data.mysql.database.azure.com;port=3306;database=copernic;uid=bercomac;sslmode=1;usesystemtruststore=0",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxN2I3OWE4ZS0zY2QxLTQzZWItOTM1Mi02Yjk4MWU1OGZiM2UiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "bercomac-on-premise-copernic-data-sharing",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
