@@ -49,7 +49,11 @@
 						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "MySqlSource"
+								"type": "MySqlSource",
+								"query": {
+									"value": "SELECT * FROM my_source_table\nWHERE created_at >= '@{pipeline().parameters.windowStart}' AND created_at < '@{pipeline().parameters.windowEnd}'",
+									"type": "Expression"
+								}
 							},
 							"sink": {
 								"type": "AzureMySqlSink",
@@ -68,14 +72,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SourceDataset_z1q",
+								"referenceName": "bercomac_copernic_transfers",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "DestinationDataset_z1q",
+								"referenceName": "azure_copernic_transfers",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -97,12 +101,12 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_z1q')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_z1q')]"
+				"[concat(variables('factoryId'), '/datasets/bercomac_copernic_transfers')]",
+				"[concat(variables('factoryId'), '/datasets/azure_copernic_transfers')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_z1q')]",
+			"name": "[concat(parameters('factoryName'), '/azure_copernic_transfers')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -119,26 +123,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/azure_copernic_dataset')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_z1q')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "copernic_on_premise_data_upload",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "MySqlTable",
-				"schema": [],
-				"typeProperties": {
-					"tableName": "`transfers`"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/copernic_on_premise_data_upload')]"
 			]
 		},
 		{
@@ -272,6 +256,26 @@
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/bercomac_copernic_dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "copernic_on_premise_data_upload",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "MySqlTable",
+				"schema": [],
+				"typeProperties": {
+					"tableName": "`transfers`"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/copernic_on_premise_data_upload')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/bercomac_copernic_transfers')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
