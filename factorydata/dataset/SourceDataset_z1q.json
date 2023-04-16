@@ -1,0 +1,15 @@
+{
+	"name": "SourceDataset_z1q",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "copernic_on_premise_data_upload",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`transfers`"
+		}
+	}
+}
