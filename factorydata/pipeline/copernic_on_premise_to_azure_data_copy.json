@@ -14,7 +14,6 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource"
@@ -36,13 +35,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_z1q",
+						"referenceName": "bercomac_copernic_transfers",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_z1q",
+						"referenceName": "azure_copernic_transfers",
 						"type": "DatasetReference"
 					}
 				]
