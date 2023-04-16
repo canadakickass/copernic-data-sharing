@@ -14,10 +14,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "SELECT * FROM my_source_table\nWHERE created_at >= '@{pipeline().parameters.windowStart}' AND created_at < '@{pipeline().parameters.windowEnd}'"
+						"query": {
+							"value": "SELECT * FROM transfers\nWHERE created_at >= '@{pipeline().parameters.windowStart}' AND created_at < '@{pipeline().parameters.windowEnd}'",
+							"type": "Expression"
+						}
 					},
 					"sink": {
 						"type": "AzureMySqlSink",
