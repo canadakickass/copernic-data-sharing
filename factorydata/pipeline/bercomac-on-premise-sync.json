@@ -1,0 +1,7 @@
+{
+	"name": "bercomac-on-premise-sync",
+	"properties": {
+		"description": "This pipeline is used to upload on-premise data from copernic to the cloud\n",
+		"annotations": []
+	}
+}
