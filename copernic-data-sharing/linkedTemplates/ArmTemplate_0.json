@@ -290,7 +290,7 @@
 							"source": {
 								"type": "MySqlSource",
 								"query": {
-									"value": "SELECT * FROM my_source_table\nWHERE created_at >= '@{pipeline().parameters.windowStart}' AND created_at < '@{pipeline().parameters.windowEnd}'",
+									"value": "SELECT * FROM transfers\nWHERE created_at >= '@{pipeline().parameters.windowStart}' AND created_at < '@{pipeline().parameters.windowEnd}'",
 									"type": "Expression"
 								}
 							},
