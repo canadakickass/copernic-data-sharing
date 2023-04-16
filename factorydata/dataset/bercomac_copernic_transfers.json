@@ -1,5 +1,5 @@
 {
-	"name": "SourceDataset_z1q",
+	"name": "bercomac_copernic_transfers",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "copernic_on_premise_data_upload",
