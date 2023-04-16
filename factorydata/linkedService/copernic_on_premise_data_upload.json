@@ -1,0 +1,16 @@
+{
+	"name": "copernic_on_premise_data_upload",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "MySql",
+		"typeProperties": {
+			"connectionString": "server=localhost;port=3307;database=copernic;user=jacques PC;sslmode=1;usesystemtruststore=0",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwYmVjMDk2Zi0yY2ZlLTQ5NjctOTViYi1kZmY2YTdhNDU0MmUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "bercomac-on-premise-copernic-data-sharing",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
